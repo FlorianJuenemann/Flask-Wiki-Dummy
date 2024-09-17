@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page_name }}</title>
+    <title>Edit {{ page_name }}</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="container">
     <div class="my-4">
-        <h1>{{ page_name }}</h1>
-        <p>{{ content }}</p>
+        <h1>Edit Page: {{ page_name }}</h1>
+
+        <form method="POST">
+            <div class="form-group mb-3">
+                <label for="content">Content</label>
+                <textarea id="content" name="content" class="form-control" rows="10">{{ content }}</textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Save</button>
+        </form>
     </div>
 
-    <a href="/edit/{{ page_name }}" class="btn btn-warning">Edit this page</a>
     <a href="/" class="btn btn-secondary">Back to Home</a>
 
     <!-- Bootstrap JS -->
